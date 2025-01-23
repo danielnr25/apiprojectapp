@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('tareas', function (Blueprint $table) {
             $table->id('idtarea');
-            $table->string('nombre',100);
-            $table->text('comentario')->nullable();
-            $table->foreignId('idproyecto')->constrained('proyectos','idproyecto');
+            $table->string('nombre',100); // nombre varchar(100) NOT NULL,
+            $table->text('comentario')->nullable(); // comentario text NULL,
+            $table->foreignId('idproyecto')->constrained('proyectos','idproyecto'); // idproyecto int(10) unsigned NOT NULL,
             $table->foreignId('idetapa')->constrained('etapas','idetapa');
             $table->foreignId('idarea')->constrained('areas','idarea');
             $table->foreignId('idmiembro')->constrained('miembros','idmiembro');
